@@ -125,7 +125,7 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .inspo-panel-overlay{position:absolute;inset:0;}
 .inspo-panel-text{position:relative;z-index:1;}
 .inspo-panel-label{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.inspo-panel-title{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:300;color:var(--cream);line-height:1.15;white-space:nowrap;}
+.inspo-panel-title{font-family:"Cormorant Garamond",serif;font-size:clamp(0.95rem,1.8vw,1.3rem);font-weight:300;color:var(--cream);line-height:1.15;white-space:nowrap;}
 .ip-red .inspo-panel-overlay{background:linear-gradient(to top,rgba(139,26,26,0.9) 0%,rgba(10,8,6,0.3) 60%);}
 .ip-dark .inspo-panel-overlay{background:linear-gradient(to top,rgba(12,10,8,0.9) 0%,rgba(10,8,6,0.2) 60%);}
 .ip-gold .inspo-panel-overlay{background:linear-gradient(to top,rgba(80,55,10,0.9) 0%,rgba(10,8,6,0.2) 60%);}
@@ -136,28 +136,26 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .products-page{padding:0 0 120px;background:var(--off);}
 .products-page .container{max-width:1200px;margin:0 auto;padding:0 5%;}
 /* HEADER PRODUCTOS — banner compacto con imagen */
-.prod-page-banner{position:relative;overflow:hidden;min-height:280px;display:flex;align-items:flex-end;}
-@media(max-width:600px){.prod-page-banner{min-height:200px;}}
+.prod-page-banner{position:relative;overflow:hidden;min-height:220px;display:flex;align-items:flex-end;}
+@media(max-width:600px){.prod-page-banner{min-height:160px;}}
 .prod-page-banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.55);}
 .prod-page-banner-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.75) 0%,rgba(10,8,6,0.2) 60%,transparent 100%);}
-.prod-page-banner-content{position:relative;z-index:2;padding:0 6% 36px;width:100%;}
+.prod-page-banner-content{position:relative;z-index:2;padding:0 6% 28px;width:100%;}
 .section-header{margin-bottom:0;}
 .eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500;}
 .prod-page-banner .eyebrow{color:rgba(201,168,76,0.85);}
 .sec-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:#1C1814;line-height:1;margin-bottom:10px;}
-.prod-page-banner .sec-title{color:var(--cream);}
+.prod-page-banner .sec-title{color:var(--cream);font-size:clamp(1.8rem,4vw,3rem);width:100%;}
 .sec-title em{font-style:italic;color:var(--red);}
 .prod-page-banner .sec-title em{color:var(--gold);}
 .sec-desc{font-size:14px;line-height:1.7;color:#5A4A3A;max-width:520px;}
 .prod-page-banner .sec-desc{color:rgba(245,240,232,0.7);font-size:13px;}
 /* SUBCAT TABS — pegadas al banner */
-.subcat-tabs{display:flex;gap:0;margin-bottom:40px;border-bottom:1px solid rgba(28,24,20,0.1);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--white);padding:0 5%;}.subcat-tabs::-webkit-scrollbar{display:none;}
-@media(max-width:600px){.subcat-tabs{margin-bottom:24px;}}
-
-.subcat-tabs{display:flex;gap:0;margin-bottom:52px;border-bottom:1px solid rgba(28,24,20,0.1);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}.subcat-tabs::-webkit-scrollbar{display:none;}
-.subcat-tab{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#8A7A6A;padding:12px 28px;cursor:pointer;border:none;background:none;transition:all 0.25s ease;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;}
-.subcat-tab:hover{color:#1C1814;}
-.subcat-tab.active{color:#1C1814;border-bottom-color:#1C1814;}
+.subcat-tabs{display:flex;gap:10px;margin-bottom:40px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--charcoal);padding:16px 5%;border:none;}.subcat-tabs::-webkit-scrollbar{display:none;}
+@media(max-width:600px){.subcat-tabs{margin-bottom:24px;gap:8px;padding:16px 4%;}}
+.subcat-tab{font-size:10px;font-weight:500;letter-spacing:0.12em;color:rgba(245,240,232,0.5);padding:10px 22px;cursor:pointer;border:1px solid rgba(201,168,76,0.2);background:transparent;transition:all 0.25s ease;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+.subcat-tab:hover{color:var(--cream);border-color:rgba(201,168,76,0.5);}
+.subcat-tab.active{color:var(--black);background:var(--gold);border-color:var(--gold);font-weight:600;}
 
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:rgba(28,24,20,0.08);}@media(max-width:600px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
 .prod-card{background:var(--white);cursor:pointer;position:relative;transition:all 0.3s ease;}
@@ -481,7 +479,7 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     <div class="inspo-panel ip-dark">
       <img src="img/inspo-piel-radiante.jpg" alt="">
       <div class="inspo-panel-overlay"></div>
-      <div class="inspo-panel-text"><p class="inspo-panel-label">Ritual diario</p><p class="inspo-panel-title">Limpieza que<br>transforma</p></div>
+      <div class="inspo-panel-text"><p class="inspo-panel-label">Ritual diario</p><p class="inspo-panel-title">Limpieza que transforma</p></div>
     </div>
     <div class="inspo-panel ip-red">
       <img src="img/inspo-rostro-pecas.jpg" alt="">
@@ -491,7 +489,7 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     <div class="inspo-panel ip-gold">
       <img src="img/inspo-sonrisa.jpg" alt="">
       <div class="inspo-panel-overlay"></div>
-      <div class="inspo-panel-text"><p class="inspo-panel-label">Resultados</p><p class="inspo-panel-title">Visible desde<br>el primer uso</p></div>
+      <div class="inspo-panel-text"><p class="inspo-panel-label">Resultados</p><p class="inspo-panel-title">Visible desde el primer uso</p></div>
     </div>
   </div>
 </section>
@@ -505,17 +503,17 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
   <div class="prod-page-banner-overlay"></div>
   <div class="prod-page-banner-content">
     <p class="eyebrow">Catálogo Inner Glow</p>
-    <h2 class="sec-title">Tecnología que<br><em>se ve en la piel</em></h2>
+    <h2 class="sec-title" style="white-space:nowrap;">Tecnología que <em>se ve en la piel</em></h2>
     <p class="sec-desc">Tocá cualquier producto para ver su información completa.</p>
   </div>
 </div>
-<div class="container">
-  <div class="subcat-tabs">
-    <button class="subcat-tab active" onclick="showSubcat('tecnologia',this)">Tecnologías de Belleza</button>
-    <button class="subcat-tab" onclick="showSubcat('piel',this)">Piel y Belleza</button>
-    <button class="subcat-tab" onclick="showSubcat('suplementos',this)">Suplementos</button>
-    <button class="subcat-tab" onclick="showSubcat('kits',this)">Kits & Sistemas</button>
+<div class="subcat-tabs">
+    <button class="subcat-tab active" onclick="showSubcat('tecnologia',this)">TECNOLOGÍAS DE BELLEZA</button>
+    <button class="subcat-tab" onclick="showSubcat('piel',this)">PIEL Y BELLEZA</button>
+    <button class="subcat-tab" onclick="showSubcat('suplementos',this)">SUPLEMENTOS</button>
+    <button class="subcat-tab" onclick="showSubcat('kits',this)">KITS & SISTEMAS</button>
   </div>
+<div class="container">
   <div id="subcat-tecnologia" class="subcat-content">
     <div class="bloque-sep bloque-sep-img">
   <div class="bloque-sep-overlay"></div>
@@ -818,8 +816,6 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     </div>
   </div>
 </div>
-    </div>
-  </div>
 
       <!-- RETINOL COMPLEX -->
       <div class="prod-card" id="card-retinol" onclick="toggleDetail('retinol','grid-piel')">
@@ -1084,12 +1080,14 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     </div>
   </div>
 </div>
+    </div>
+  </div>
   <div id="subcat-suplementos" class="subcat-content" style="display:none;">
     <div class="bloque-sep bloque-sep-img">
   <div class="bloque-sep-overlay"></div>
   <div class="bloque-sep-content"><p class="bloque-num">03 · Nutrición</p><h3 class="bloque-titulo">Suplementos & <em>Bienestar</em></h3></div>
 </div>
-    <div class="prod-grid" id="grid-suplementos">
+    <div class="prod-grid" id="grid-suplementos" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
       <div class="prod-card" id="card-collagen" onclick="toggleDetail('collagen','grid-suplementos')">
   <div class="prod-card-img"><img src="img/collagen-antes-despues.jpg" alt="Beauty Focus Collagen+" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div>
   <div class="prod-stars"><span class="prod-stars-icons">★★★★★</span><span class="prod-stars-count">90-99% absorción</span></div>
@@ -1311,23 +1309,23 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
   </div>
   <div id="sol-antienvejecimiento" class="sol-content-area">
     <div class="sol-content-header"><h3>Anti<em>envejecimiento</em></h3><p>ageLOC no trata los síntomas — trata el origen. Para una piel visiblemente más joven desde adentro.</p></div>
-    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/galvanic-face-ampollas.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Galvanic Face Spa</h3><p class="prod-card-tagline">Corrientes galvánicas que rejuvenecen desde adentro.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Galvanic Face Spa','Antienvejecimiento','img/galvanic-face-ampollas.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/truface-pouch-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Essence Ultra</h3><p class="prod-card-tagline">94% lifting comprobado en 12 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Essence Ultra','Antienvejecimiento','img/truface-pouch-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/retinol-complex.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Peptide Retinol Complex</h3><p class="prod-card-tagline">Retinol + péptidos ageLOC. Resultados en 2 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Peptide Retinol Complex','Antienvejecimiento','img/retinol-complex.jpg',this)">Agregar</button></div></div></div></div>
+    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/galvanic-face-ampollas.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Galvanic Face Spa</h3><p class="prod-card-tagline">Corrientes galvánicas que rejuvenecen desde adentro.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Galvanic Face Spa','Antienvejecimiento','img/galvanic-face-ampollas.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/truface-pouch-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Essence Ultra</h3><p class="prod-card-tagline">94% lifting comprobado en 12 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Essence Ultra','Antienvejecimiento','img/truface-pouch-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/retinol-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Peptide Retinol Complex</h3><p class="prod-card-tagline">Retinol + péptidos IA. Renovación celular en 2 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Peptide Retinol Complex','Antienvejecimiento','img/retinol-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/boost-dispositivo-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Boost</h3><p class="prod-card-tagline">Microcorriente que densifica y luminiza en 2 minutos.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Boost','Antienvejecimiento','img/boost-dispositivo-blanco.jpg',this)">Agregar</button></div></div></div></div>
   </div>
   <div id="sol-firmeza" class="sol-content-area">
     <div class="sol-content-header"><h3>Firmeza y <em>Levantamiento</em></h3><p>Para levantar, reafirmar y redefinir el contorno. Una piel visiblemente más firme.</p></div>
-    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/truface-pouch-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Essence Ultra</h3><p class="prod-card-tagline">94% lifting en 12 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Essence Ultra','Firmeza','img/truface-pouch-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/uplifting-cream-spf.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Uplifting Rich Cream</h3><p class="prod-card-tagline">Efecto lifting visible desde el primer uso.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Uplifting Rich Cream','Firmeza','img/uplifting-cream-spf.jpg',this)">Agregar</button></div></div></div></div>
+    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/truface-pouch-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Essence Ultra</h3><p class="prod-card-tagline">94% lifting en 12 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Essence Ultra','Firmeza','img/truface-pouch-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/uplifting-cream-blanco.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Uplifting Rich Cream</h3><p class="prod-card-tagline">Efecto lifting visible desde la primera aplicación.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Uplifting Rich Cream','Firmeza','img/uplifting-cream-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/galvanic-face-ampollas.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Galvanic Face Spa</h3><p class="prod-card-tagline">Tecnología galvánica para piel más firme y contorneada.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Galvanic Face Spa','Firmeza','img/galvanic-face-ampollas.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/retinol-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Peptide Retinol Complex</h3><p class="prod-card-tagline">Mejora elasticidad y reduce arrugas visiblemente.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Peptide Retinol Complex','Firmeza','img/retinol-solo.jpg',this)">Agregar</button></div></div></div></div>
   </div>
   <div id="sol-lineas" class="sol-content-area">
     <div class="sol-content-header"><h3>Líneas y <em>Arrugas</em></h3><p>Menos líneas, mejor textura. Para revertir los signos visibles del envejecimiento.</p></div>
-    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/line-corrector.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Tru Face Line Corrector</h3><p class="prod-card-tagline">Aplicación puntual en líneas de expresión profundas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Tru Face Line Corrector','Líneas','img/line-corrector.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/retinol-complex.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Peptide Retinol Complex</h3><p class="prod-card-tagline">Retinol + péptidos ageLOC. Resultados en 2 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Peptide Retinol Complex','Líneas','img/retinol-complex.jpg',this)">Agregar</button></div></div></div></div>
+    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/line-corrector-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Line Corrector</h3><p class="prod-card-tagline">Aplicación puntual en líneas de ojos, boca y frente.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Line Corrector','Líneas','img/line-corrector-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/retinol-solo.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Peptide Retinol Complex</h3><p class="prod-card-tagline">Retinol + péptidos ageLOC. Resultados en 2 semanas.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Peptide Retinol Complex','Líneas','img/retinol-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/uplifting-cream-blanco.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Uplifting Rich Cream</h3><p class="prod-card-tagline">Reduce líneas finas e hidrata en profundidad.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Uplifting Rich Cream','Líneas','img/uplifting-cream-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/boost-dispositivo-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC Boost</h3><p class="prod-card-tagline">Microcorriente que suaviza y rellena visiblemente.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC Boost','Líneas','img/boost-dispositivo-blanco.jpg',this)">Agregar</button></div></div></div></div>
   </div>
   <div id="sol-poros" class="sol-content-area">
-    <div class="sol-content-header"><h3>Piel Grasa <em>y Poros</em></h3><p>Poros limpios, piel equilibrada. Piel fresca, mate y con textura uniforme.</p></div>
-    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/lumispa-dispositivo-base.jpg" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC LumiSpa iO</h3><p class="prod-card-tagline">Limpieza profunda de poros en 2 minutos.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC LumiSpa iO','Piel Grasa','img/lumispa-dispositivo-base.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/niacinamide-serum.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Nu Skin Niacinamide Serum</h3><p class="prod-card-tagline">93% opinó que su aspecto general mejoró.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Nu Skin Niacinamide Serum','Piel Grasa','img/niacinamide-serum.jpg',this)">Agregar</button></div></div></div></div>
+    <div class="sol-content-header"><h3>Piel Grasa <em>y Poros</em></h3><p>Poros limpios, piel equilibrada. Fresca, mate y con textura uniforme.</p></div>
+    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/lumispa-device-gemini.png" alt="" loading="lazy"><span class="prod-pill pill-device">Dispositivo</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">ageLOC LumiSpa iO</h3><p class="prod-card-tagline">Limpieza profunda de poros en 2 minutos.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('ageLOC LumiSpa iO','Piel Grasa','img/lumispa-device-gemini.png',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/niacinamide-solo.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Nu Skin Niacinamide Serum</h3><p class="prod-card-tagline">Minimiza poros, reduce sebo y unifica el tono.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Nu Skin Niacinamide Serum','Piel Grasa','img/niacinamide-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/aha-cleanser-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">AHA Glycolic Cleanser</h3><p class="prod-card-tagline">Exfoliación química suave que purifica y renueva.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('AHA Glycolic Cleanser','Piel Grasa','img/aha-cleanser-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/lumispa-gel-tubo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">LumiSpa Gel Limpiador</h3><p class="prod-card-tagline">Limpieza profunda sin eliminar la barrera natural.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('LumiSpa Gel Limpiador','Piel Grasa','img/lumispa-gel-tubo.jpg',this)">Agregar</button></div></div></div></div>
   </div>
   <div id="sol-seca" class="sol-content-area">
-    <div class="sol-content-header"><h3><em>Piel</em> Seca</h3><p>Ingredientes de alta hidratación que restauran y nutren la barrera en profundidad.</p></div>
-    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/ha-vitamin-gel-cream.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">HA & Vitamin A Gel Cream</h3><p class="prod-card-tagline">Hidratación intensa visible en 30 minutos.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('HA &amp; Vitamin A Gel Cream','Piel Seca','img/ha-vitamin-gel-cream.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/epoch-cica-balm.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Epoch Cica Balm</h3><p class="prod-card-tagline">Centella asiática + escualeno. Calma y repara.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Epoch Cica Balm','Piel Seca','img/epoch-cica-balm.jpg',this)">Agregar</button></div></div></div></div>
+    <div class="sol-content-header"><h3>Piel <em>Seca</em></h3><p>Ingredientes que restauran, nutren y fortalecen la barrera lipídica en profundidad.</p></div>
+    <div class="prod-grid"><div class="prod-card"><div class="prod-card-img"><img src="img/uplifting-cream-blanco.jpg" alt="" loading="lazy"><span class="prod-pill pill-top">Top venta</span></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Tru Face Uplifting Rich Cream</h3><p class="prod-card-tagline">Hidratación profunda + barrera protectora desde la 1ª aplicación.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Tru Face Uplifting Rich Cream','Piel Seca','img/uplifting-cream-blanco.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/day-dream-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Day Dream Protective Cream SPF35</h3><p class="prod-card-tagline">Hidratación ligera con protección UV todo el día.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Day Dream Protective Cream SPF35','Piel Seca','img/day-dream-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/niacinamide-solo.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Nu Skin Niacinamide Serum</h3><p class="prod-card-tagline">Fortalece la barrera lipídica y retiene la humedad.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Nu Skin Niacinamide Serum','Piel Seca','img/niacinamide-solo.jpg',this)">Agregar</button></div></div></div><div class="prod-card"><div class="prod-card-img"><img src="img/collagen-antes-despues.jpg" alt="" loading="lazy"></div><div class="prod-stars"><span class="prod-stars-icons">★★★★★</span></div><div class="prod-card-body"><h3 class="prod-card-name">Beauty Focus Collagen+</h3><p class="prod-card-tagline">Hidratación desde adentro — piel más plena desde el mes 1.</p><div class="prod-card-action"><button class="btn-add" onclick="addToCart('Beauty Focus Collagen+','Piel Seca','img/collagen-antes-despues.jpg',this)">Agregar</button></div></div></div></div>
   </div>
 </section>
 </div>
