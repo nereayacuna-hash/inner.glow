@@ -214,21 +214,18 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .bloque-sep-img .bloque-titulo em{font-style:italic;color:var(--gold);}
 .solucion-page{padding:0;background:var(--dark);}
 .sol-hero{padding:80px 6% 60px;background:var(--dark);}
-.sol-collage{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto;}
-@media(max-width:768px){.sol-collage{grid-template-columns:1fr;}}
-.sol-card{position:relative;overflow:hidden;cursor:pointer;min-height:420px;border-radius:var(--radius-lg);margin:4px;}
-@media(max-width:768px){.sol-card{min-height:180px;border-radius:var(--radius-md);}}
-.sol-card:first-child{grid-row:1/3;}
-@media(max-width:768px){.sol-card:first-child{grid-row:auto;}}
+.sol-collage{display:flex;flex-direction:column;gap:0;}
+.sol-card{position:relative;overflow:hidden;cursor:pointer;height:200px;border-radius:0;margin:0;border-bottom:1px solid rgba(201,168,76,0.08);}
+.sol-card:first-child{grid-row:auto;}
 .sol-card img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.6s ease;}
 .sol-card:hover img{transform:scale(1.04);}
-.sol-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.85) 0%,transparent 55%);transition:all 0.3s ease;}
-.sol-card.active .sol-card-overlay{background:linear-gradient(to top,rgba(139,26,26,0.88) 0%,rgba(10,8,6,0.3) 60%);}
-.sol-card-body{position:absolute;bottom:0;left:0;right:0;padding:24px;}
-.sol-card-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.8);margin-bottom:4px;}
-.sol-card-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.1rem,3vw,1.5rem);font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:6px;}
-.sol-card-sub{font-size:11px;color:rgba(245,240,232,0.6);line-height:1.4;}
-.sol-card-arrow{display:inline-flex;margin-top:8px;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:all 0.25s ease;border-radius:50%;}
+.sol-card-overlay{position:absolute;inset:0;background:rgba(10,8,6,0.58);backdrop-filter:blur(2px);transition:all 0.3s ease;}
+.sol-card.active .sol-card-overlay{background:rgba(100,15,15,0.65);backdrop-filter:blur(2px);}
+.sol-card-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 32px;}
+.sol-card-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.7);margin-bottom:6px;}
+.sol-card-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:400;color:var(--cream);line-height:1.1;margin-bottom:6px;}
+.sol-card-sub{font-size:12px;color:rgba(245,240,232,0.55);line-height:1.4;}
+.sol-card-arrow{display:inline-flex;margin-top:10px;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:all 0.25s ease;border-radius:50%;}
 .sol-card.active .sol-card-arrow{background:var(--gold);color:var(--black);border-color:var(--gold);}
 .sol-content-area{background:var(--off);padding:56px 6%;display:none;border-radius:var(--radius-lg);margin:8px;}
 .sol-content-area.visible{display:block;}
@@ -240,7 +237,7 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .global-intro{padding:80px 6% 60px;}
 .global-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 16px 16px;}
 @media(max-width:768px){.global-cards-grid{grid-template-columns:repeat(2,1fr);}}
-.global-stat-card{background:var(--charcoal);padding:32px 28px;transition:background 0.3s ease;border-radius:var(--radius-lg);}
+.global-stat-card{background:var(--charcoal);padding:32px 28px;transition:background 0.3s ease;border-radius:var(--radius-xl);}
 .global-stat-card:hover{background:var(--warm);}
 .gsc-num{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-0.02em;}
 .gsc-label{font-size:12px;color:var(--text-dim);line-height:1.5;}
@@ -412,31 +409,14 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
       <p class="motiv-firma">— Inner Glow · Nu Skin Argentina</p>
     </div>
     <div class="motiv-candle-panel">
-      <img src="img/nuskin-crema-textura.png" alt="Nu Skin">
+      <img src="img/inspo-rostro-pecas.jpg" alt="Nu Skin" style="object-position:center 20%;">
       <div class="motiv-candle-overlay"></div>
       <div class="motiv-candle-text">
         <p class="motiv-candle-phrase">El ritual que <em>elegís para vos</em></p>
       </div>
     </div>
   </div>
-  <div class="inspo-grid">
-    <div class="inspo-panel ip-dark">
-      <img src="img/ingredientes-banner.png" alt="">
-      <div class="inspo-panel-overlay"></div>
-      <div class="inspo-panel-text"><p class="inspo-panel-label">Ritual diario</p><p class="inspo-panel-title">Limpieza que transforma</p></div>
-    </div>
-    <div class="inspo-panel ip-red">
-      <img src="img/inspo-rostro-pecas.jpg" alt="">
-      <div class="inspo-panel-overlay"></div>
-      <div class="inspo-panel-text"><p class="inspo-panel-label">Tecnología</p><p class="inspo-panel-title">Ciencia en tu piel</p></div>
-    </div>
-    <div class="inspo-panel ip-gold">
-      <img src="img/inspo-sonrisa.jpg" alt="">
-      <div class="inspo-panel-overlay"></div>
-      <div class="inspo-panel-text"><p class="inspo-panel-label">Resultados</p><p class="inspo-panel-title">Visible desde el primer uso</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 <div id="main-content">
 <div class="page-section active" id="page-productos">
 <section class="products-page">
@@ -650,30 +630,30 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     <p class="sec-desc" style="color:var(--text-dim);">Seleccioná tu preocupación principal y descubrí los productos diseñados para vos.</p>
   </div>
   <div class="sol-collage">
-    <div class="sol-card" onclick="toggleSol('firmeza',this)">
-      <img src="img/ageloc-cadera.png" alt="Firmeza">
+    <div class="sol-card" onclick="toggleSol('antienvejecimiento',this)">
+      <img src="img/sol-antienvejecimiento.jpg" alt="Antienvejecimiento" style="object-position:center 25%;filter:blur(1px) brightness(0.75);">
       <div class="sol-card-overlay"></div>
-      <div class="sol-card-body"><p class="sol-card-label">Solución · 01</p><h3 class="sol-card-name">Firmeza y Levantamiento</h3><p class="sol-card-sub">Efecto lifting visible</p><div class="sol-card-arrow">→</div></div>
+      <div class="sol-card-body"><p class="sol-card-label">Solución · 01</p><h3 class="sol-card-name">Antienvejecimiento</h3><p class="sol-card-sub">Tecnología ageLOC · Trata el origen</p><div class="sol-card-arrow">→</div></div>
+    </div>
+    <div class="sol-card" onclick="toggleSol('firmeza',this)">
+      <img src="img/ageloc-cadera.png" alt="Firmeza" style="filter:blur(1px) brightness(0.75);">
+      <div class="sol-card-overlay"></div>
+      <div class="sol-card-body"><p class="sol-card-label">Solución · 02</p><h3 class="sol-card-name">Firmeza y Levantamiento</h3><p class="sol-card-sub">Efecto lifting visible</p><div class="sol-card-arrow">→</div></div>
     </div>
     <div class="sol-card" onclick="toggleSol('lineas',this)">
-      <img src="img/sol-lineas-nueva.jpg" alt="Líneas">
+      <img src="img/sol-antienvejecimiento.jpg" alt="Líneas" style="object-position:center 40%;filter:blur(1px) brightness(0.7);">
       <div class="sol-card-overlay"></div>
-      <div class="sol-card-body"><p class="sol-card-label">Solución · 02</p><h3 class="sol-card-name">Líneas y Arrugas</h3><p class="sol-card-sub">Corrección y suavizado</p><div class="sol-card-arrow">→</div></div>
+      <div class="sol-card-body"><p class="sol-card-label">Solución · 03</p><h3 class="sol-card-name">Líneas y Arrugas</h3><p class="sol-card-sub">Corrección y suavizado</p><div class="sol-card-arrow">→</div></div>
     </div>
     <div class="sol-card" onclick="toggleSol('poros',this)">
-      <img src="img/sol-piel-grasa-nueva.jpg" alt="Poros">
+      <img src="img/ageloc-cadera.png" alt="Piel Grasa" style="filter:blur(1px) brightness(0.65);">
       <div class="sol-card-overlay"></div>
-      <div class="sol-card-body"><p class="sol-card-label">Solución · 03</p><h3 class="sol-card-name">Piel Grasa y Poros</h3><p class="sol-card-sub">Control y purificación</p><div class="sol-card-arrow">→</div></div>
+      <div class="sol-card-body"><p class="sol-card-label">Solución · 04</p><h3 class="sol-card-name">Piel Grasa y Poros</h3><p class="sol-card-sub">Control y purificación</p><div class="sol-card-arrow">→</div></div>
     </div>
     <div class="sol-card" onclick="toggleSol('seca',this)">
-      <img src="img/sol-piel-seca-nueva.jpg" alt="Piel Seca">
+      <img src="img/sol-antienvejecimiento.jpg" alt="Piel Seca" style="object-position:center 60%;filter:blur(1px) brightness(0.7);">
       <div class="sol-card-overlay"></div>
-      <div class="sol-card-body"><p class="sol-card-label">Solución · 04</p><h3 class="sol-card-name">Piel Seca</h3><p class="sol-card-sub">Nutrición e hidratación profunda</p><div class="sol-card-arrow">→</div></div>
-    </div>
-    <div class="sol-card" style="grid-column:1/-1;min-height:140px;" onclick="toggleSol('antienvejecimiento',this)">
-      <img src="img/sol-antienvejecimiento.jpg" alt="Antienvejecimiento" style="object-position:center 30%;">
-      <div class="sol-card-overlay"></div>
-      <div class="sol-card-body"><p class="sol-card-label">Solución · 05</p><h3 class="sol-card-name">Antienvejecimiento</h3><p class="sol-card-sub">Tecnología ageLOC · Trata el origen</p><div class="sol-card-arrow">→</div></div>
+      <div class="sol-card-body"><p class="sol-card-label">Solución · 05</p><h3 class="sol-card-name">Piel Seca</h3><p class="sol-card-sub">Nutrición e hidratación profunda</p><div class="sol-card-arrow">→</div></div>
     </div>
   </div>
   <div id="sol-firmeza" class="sol-content-area">
