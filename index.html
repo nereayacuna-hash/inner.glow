@@ -142,8 +142,8 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .prod-slider-mask{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);}
 .prod-slider-track{display:flex;gap:18px;width:max-content;animation:prod-slider-scroll 36s linear infinite;}
 .prod-slider-mask:hover .prod-slider-track{animation-play-state:paused;}
-.prod-slide{flex:0 0 auto;width:200px;height:200px;border-radius:var(--radius-md);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 32px rgba(0,0,0,0.4);}
-.prod-slide img{width:100%;height:100%;object-fit:contain;padding:16px;transition:transform 0.35s ease;}
+.prod-slide{flex:0 0 auto;width:230px;height:230px;border-radius:var(--radius-md);overflow:hidden;background:var(--charcoal);box-shadow:0 14px 32px rgba(0,0,0,0.4);}
+.prod-slide img{width:100%;height:100%;object-fit:cover;transition:transform 0.35s ease;}
 .prod-slide:hover img{transform:scale(1.06);}
 @media(max-width:600px){.prod-slide{width:142px;height:142px;}.prod-slider-track{gap:12px;}}
 @keyframes prod-slider-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -435,30 +435,28 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
 <section class="products-page">
 <div class="prod-slider-banner">
   <div class="prod-slider-head">
-    <p class="eyebrow">Catálogo Inner Glow</p>
-    <h2 class="sec-title">Tecnología que <em>se ve en la piel</em></h2>
-    <p class="sec-desc">Tocá cualquier producto para ver su información completa.</p>
+    <p class="eyebrow">Ingredientes que funcionan</p>
+    <h2 class="sec-title">El poder de la <em>naturaleza</em></h2>
+    <p class="sec-desc">Botánicos puros y activos de alta potencia — la naturaleza, respaldada por ciencia.</p>
   </div>
   <div class="prod-slider-mask">
     <div class="prod-slider-track">
-      <div class="prod-slide"><img src="img/lumispa-device-gemini.png" alt="ageLOC LumiSpa iO" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/galvanic-face-kit-new.jpg" alt="Galvanic Face Spa" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/wellspa-dispositivo.jpg" alt="WellSpa iO" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/boost-dispositivo-blanco.jpg" alt="ageLOC Boost" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/prysm-dispositivo-blanco.jpg" alt="PRYSM iO" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/ap24-solo-blanco.jpg" alt="AP24" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/retinol-solo.jpg" alt="Peptide Retinol" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/uplifting-rich-cream.jpg" alt="Uplifting Rich Cream" loading="lazy"></div>
-      <div class="prod-slide"><img src="img/truface-pouch-blanco.jpg" alt="Tru Face Essence" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/lumispa-device-gemini.png" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/galvanic-face-kit-new.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/wellspa-dispositivo.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/boost-dispositivo-blanco.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/prysm-dispositivo-blanco.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/ap24-solo-blanco.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/retinol-solo.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/uplifting-rich-cream.jpg" alt="" loading="lazy"></div>
-      <div class="prod-slide" aria-hidden="true"><img src="img/truface-pouch-blanco.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-gac.jpg" alt="Gac — betacarotenos" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-ginseng.jpg" alt="Ginseng" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-vitaminac.jpg" alt="Vitamina C" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-serum.jpg" alt="Sérum activo" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-algas.jpg" alt="Algas marinas" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-matcha.jpg" alt="Té verde matcha" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-aloe.jpg" alt="Aloe vera" loading="lazy"></div>
+      <div class="prod-slide"><img src="img/ingrediente-bambu.jpg" alt="Bambú" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-gac.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-ginseng.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-vitaminac.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-serum.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-algas.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-matcha.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-aloe.jpg" alt="" loading="lazy"></div>
+      <div class="prod-slide" aria-hidden="true"><img src="img/ingrediente-bambu.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
 </div>
