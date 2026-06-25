@@ -35,8 +35,20 @@ nav.scrolled{background:rgba(10,8,6,0.94);backdrop-filter:blur(24px);border-bott
 .mobile-nav-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;}
 .mobile-nav-btn.active{color:var(--gold);}
 .mobile-nav-btn.active svg{stroke:var(--gold);}
-@media(max-width:900px){.mobile-nav{display:block;}body{padding-bottom:64px;}}
-.cart-btn{position:fixed;bottom:80px;right:20px;z-index:300;background:var(--red);color:var(--cream);border:none;border-radius:100px;padding:13px 20px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:9px;box-shadow:0 8px 32px rgba(139,26,26,0.5);transition:all 0.3s ease;opacity:0;pointer-events:none;transform:translateY(10px);}
+.mobile-nav{display:none!important;}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px;z-index:320;}
+.nav-burger span{display:block;height:2px;width:100%;background:var(--cream);border-radius:2px;transition:transform 0.3s ease,opacity 0.2s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:900px){.nav-burger{display:flex;}}
+.nav-menu{position:fixed;top:68px;left:0;right:0;background:rgba(10,8,6,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.15);display:flex;flex-direction:column;padding:6px 6% 20px;transform:translateY(-14px);opacity:0;pointer-events:none;transition:all 0.28s ease;z-index:290;}
+.nav-menu.open{transform:translateY(0);opacity:1;pointer-events:all;}
+.nav-menu-item{background:none;border:none;text-align:left;font-family:"DM Sans",sans-serif;font-size:15px;color:var(--text-light);padding:15px 4px;border-bottom:1px solid rgba(201,168,76,0.08);cursor:pointer;letter-spacing:0.03em;transition:color 0.2s ease;}
+.nav-menu-item.active{color:var(--gold);}
+.nav-menu-cta{margin-top:16px;text-align:center;background:var(--red);color:var(--cream);border-radius:100px;padding:14px;font-size:14px;text-decoration:none;font-weight:500;letter-spacing:0.04em;}
+@media(min-width:901px){.nav-menu{display:none;}}
+.cart-btn{position:fixed;bottom:24px;right:20px;z-index:300;background:var(--red);color:var(--cream);border:none;border-radius:100px;padding:13px 20px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:9px;box-shadow:0 8px 32px rgba(139,26,26,0.5);transition:all 0.3s ease;opacity:0;pointer-events:none;transform:translateY(10px);}
 .cart-btn.active{opacity:1;pointer-events:all;transform:translateY(0);}
 .cart-btn:hover{background:var(--red-bright);}
 .cart-count{background:var(--gold);color:var(--black);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
@@ -363,7 +375,16 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
     <button class="nav-tab" onclick="showPage('faq',this)">FAQ</button>
   </div>
   <a class="nav-cta" href="https://wa.me/542966469002" target="_blank">Hablar con Nere</a>
+  <button class="nav-burger" id="navBurger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav-menu" id="navMenu">
+  <button class="nav-menu-item active" onclick="navTo('productos')">Productos</button>
+  <button class="nav-menu-item" onclick="navTo('solucion')">Tu Solución</button>
+  <button class="nav-menu-item" onclick="navTo('global')">Presencia Global</button>
+  <button class="nav-menu-item" onclick="navTo('testimonios')">Testimonios</button>
+  <button class="nav-menu-item" onclick="navTo('faq')">FAQ</button>
+  <a class="nav-menu-cta" href="https://wa.me/542966469002" target="_blank">Hablar con Nere</a>
+</div>
 <button class="cart-btn" id="cartBtn" onclick="openCart()">
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
   Mi selección <span class="cart-count" id="cartCount">0</span>
@@ -802,30 +823,7 @@ footer{background:var(--black);padding:52px 6%;border-top:1px solid rgba(201,168
   <div class="footer-bottom"><p>© 2025 Inner Glow · Afiliada independiente Nu Skin · Argentina</p><p style="color:var(--gold);font-size:11px;">Nu Skin Enterprises, NYSE: NUS</p></div>
 </footer>
 <!-- MOBILE NAV -->
-<nav class="mobile-nav">
-  <div class="mobile-nav-inner">
-    <button class="mobile-nav-btn active" onclick="showPage('productos',this);setMobileNav(this)">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Productos
-    </button>
-    <button class="mobile-nav-btn" onclick="showPage('solucion',this);setMobileNav(this)">
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-13a1 1 0 0 0-1 1v4a1 1 0 0 0 .553.894l3 1.5a1 1 0 1 0 .894-1.788L13 11.382V8a1 1 0 0 0-1-1z"/></svg>
-      Solución
-    </button>
-    <button class="mobile-nav-btn" onclick="showPage('global',this);setMobileNav(this)">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      Global
-    </button>
-    <button class="mobile-nav-btn" onclick="showPage('testimonios',this);setMobileNav(this)">
-      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      Testimonios
-    </button>
-    <button class="mobile-nav-btn" onclick="showPage('faq',this);setMobileNav(this)">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      FAQ
-    </button>
-  </div>
-</nav>
+<!-- menú móvil ahora es hamburguesa en el nav superior -->
 <script>
 // ─── NAV ───────────────────────────────────────────────
 window.addEventListener('scroll',()=>{
@@ -843,7 +841,25 @@ function showPage(id,btn){
 
 function setMobileNav(btn){
   document.querySelectorAll('.mobile-nav-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+
+// ─── MENÚ HAMBURGUESA (móvil) ──────────────────────────
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('open');
+  document.getElementById('navBurger').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('navMenu').classList.remove('open');
+  document.getElementById('navBurger').classList.remove('open');
+}
+const NAV_INDEX={productos:0,solucion:1,global:2,testimonios:3,faq:4};
+function navTo(id){
+  showPage(id,null);
+  const idx=NAV_INDEX[id];
+  document.querySelectorAll('.nav-tab').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  document.querySelectorAll('.nav-menu-item').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  closeMenu();
 }
 
 // ─── SUBCATEGORÍAS ─────────────────────────────────────
